@@ -1,6 +1,6 @@
-import api from "./services/api.service";
 import Form from "./components/Form";
 import List from "./components/List";
+import api from "./services/api.service";
 
 const root = document.querySelector("#root");
 
@@ -11,6 +11,10 @@ api.index().then((products) => {
     ${List(products)}
   </main>
   `;
+
+  document.querySelector("#search").addEventListener("keyup", () => {
+    console.log("hello");
+  });
 });
 
 // TO MASS COMMENT, DO CTRL /
