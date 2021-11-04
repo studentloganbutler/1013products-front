@@ -12,8 +12,12 @@ api.index().then((products) => {
   </main>
   `;
 
-  document.querySelector("#search").addEventListener("keyup", () => {
-    console.log("hello");
+  document.querySelector("#search").addEventListener("keyup", (e) => {
+    console.log(
+      products.filter((product) =>
+        product.name.toLowerCase().includes(e.target.value.toLowerCase())
+      )
+    );
   });
 });
 
